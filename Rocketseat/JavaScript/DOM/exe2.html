@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript</title>
+    </head>
+    <body>
+        <!--
+            Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+            algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+        -->
+        <div class="exe1">
+            <button id="botao">Criar caixa</button>
+            <div id="caixa"></div>
+        </div>
+    </body>
+
+    <script>
+        //var caixaelemento = document.querySelector('caixa');
+        //var botaoelemento = document.querySelector('botao');
+
+        var caixaelemento = document.getElementById('caixa');
+        var botaoelemento = document.getElementById('botao');
+        
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            
+            return color;
+        }
+
+        botaoelemento.onclick  = function(){
+            var caixa = document.createElement('div');
+
+            caixa.style.width = 100;
+            caixa.style.height = 100;
+            caixa.style.backgroundColor = '#f00';
+
+            caixa.onmouseover = function () {
+                caixa.style.backgroundColor = getRandomColor();
+            }
+
+            caixaelemento.appendChild(caixa);
+        }
+        
+                
+    </script>    
+</html>

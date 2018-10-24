@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+           <!-- 
+            Vou escrever esse codigo abaixo no script
+
+            <input id="nome" type="text" name="nome" class="nome"/>
+            <button class="botao">Adicionar</button>
+           --> 
+           <input id="nome" />
+        </div>
+
+        <!--
+            NESSA AULA ESTOU FAZENDO NO SCRIPT O QUE EU FARIA ABAIXO NO HTML:
+            
+            <a href="http://cin.ufpe.br/~dmac2">Acessar site do David</a>
+        -->
+        <script>
+            //CRIANDO ELEMENTOS DENTRO DO SCRIPT
+
+            var linkElement = document.createElement('a');
+            linkElement.setAttribute('href', 'http://cin.ufpe.br/~dmac2');
+            linkElement.setAttribute('title', 'Meu site');
+
+            var textElement = document.createTextNode('Acessar site do David');
+            //posicionar o textelement dentro do linkelement
+            //ou seja, adicionar textelement como um filho do linkelement
+            linkElement.appendChild(textElement);
+
+            //ate aqui eu fiz como se eu tivesse escrito no html:
+            //<a href="http://cin.ufpe.br/~dmac2">Acessar site do David</a>
+
+            //agora vou mudar a div app
+            var containerElement = document.querySelector('#app');
+            containerElement.appendChild(linkElement);
+            
+            //escrevi na div app um input
+            //no script eu posso apagar esse input fazendo isso abaixo
+            var inputElement = document.querySelector('#nome');
+            containerElement.removeChild(inputElement);
+
+        </script>
+    </body>
+</html>

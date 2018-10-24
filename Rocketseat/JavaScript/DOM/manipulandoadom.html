@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome" class="nome"/>
+            <button class="botao">Adicionar</button>
+        </div>
+
+        <script>
+            //MANIPULANDO ELEMENTOS DA DOM ATRAVEZ DO JAVASCRIPT
+            //document eh uma variavel global onde referencio a DOM do meu codigo
+            
+            //getelementbyid ele procura os dados de um elemento da DOM
+            var inputElement = document.getElementById('nome');
+            console.log(inputElement); //informando
+            
+            //getelementbytagname ele pega as informacoes de uma tag
+            //aqui peguei da tag input
+            //como o html pode ter varios inputs, isso vai retornar um vetor
+            //com todos os inputs
+            //se eu colocar [0] no final, estou pedindo para mostrar o primeiro input apenas
+            var inputElement2 = document.getElementsByTagName('input')[0];
+            console.log(inputElement2); //informando
+            
+            //já aqui pego as informacoes de uma class nome do html
+            //tambem retorna um vetor com todas as class do html
+            //se colocar [0] no final, retorna apenas a primeira class
+            var inputElement3 = document.getElementsByClassName('nome')[0];
+            console.log(inputElement3); //informando
+
+            //ja aqui eh muito melhor que as anteriores
+            //com o queryselector posso fazer oq as anteriores fazem
+            //aqui ele percorre a dom ate achar o que eu quero
+            //eu vou explicando o caminho que ele deve chegar
+            //nesse exemplo quero as informacoes do input que estao no doby, na div app,input
+            //pra chegar la eu faço
+            //'body div#app input' ou
+            //'div#app input' ou
+            //'input[name=nome]'
+            //que da no mesmo
+            //se eu colocar soh 'input' ele vai retornar o primeiro input que eu tiver
+            var inputElement4 = document.querySelector('body div#app input');
+            console.log(inputElement4);
+            
+            //aqui ele vai pegar todos os meus inputs no html
+            var inputElement5 = document.querySelectorAll('input');
+            console.log(inputElement5);
+            
+
+            var btnElement = document.querySelector('button.botao');
+            btnElement.onclick = function(){
+                //aqui aparece uma mensagem de alerta no navegador
+                alert('Botão clicado');
+            }
+            var btnElement2 = document.querySelector('input[name=nome]');
+
+            btnElement2.onclick = function(){
+                //aqui eu passo uma mensagem de alerta com o que foi escrito no meu input
+                var text = inputElement2.value;
+                alert(text);
+            }
+
+            //OBSERVACAO
+
+            //PARA TESTAR CADA FUNCIONALIDADE AQUI, COMENTE AS OUTRAS E DEIXE SÓ UMA
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso de javascript</title>
+        <body>
+            <script>
+                function exibeHabilidades(usuarios) {
+                    //Dica: Para percorrer um vetor você deve utilizar a sintaxe for...of e para unir valores de um array
+                    //com um separador utilize o join.
+                    for (usuario of usuarios) {
+                        console.log(
+                        "O " +
+                            usuario.nome +
+                            " possui as habilidades: " +
+                            usuario.habilidades.join(", ")
+                        );
+                    }
+                    }
+
+                    var usuarios = [
+                    {
+                        nome: "Diego",
+                        habilidades: ["Javascript", "ReactJS", "Redux"]
+                    },
+                    {
+                        nome: "Gabriel",
+                        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                    }
+                    ];
+
+                    exibeHabilidades(usuarios);
+            </script>
+        </body>
+    </head>
+</html>

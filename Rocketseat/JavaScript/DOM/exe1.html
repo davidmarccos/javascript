@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript</title>
+    </head>
+    <body>
+        <!--
+            Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+            vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+            aparecer na tela.
+        -->
+        <div class="exe1">
+            <button id="botao">Criar caixa</button>
+            <div id="caixa"></div>
+        </div>
+    </body>
+
+    <script>
+        //var caixaelemento = document.querySelector('caixa');
+        //var botaoelemento = document.querySelector('botao');
+
+        var caixaelemento = document.getElementById('caixa');
+        var botaoelemento = document.getElementById('botao');
+        
+        botaoelemento.onclick  = function(){
+            var caixa = document.createElement('div');
+
+            caixa.style.width = 100;
+            caixa.style.height = 100;
+            caixa.style.backgroundColor = '#f00';
+
+            caixaelemento.appendChild(caixa);
+        }
+    </script>    
+</html>
